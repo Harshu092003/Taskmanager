@@ -92,7 +92,7 @@ async def update_task(task_id: str, payload: TaskUpdate, db: AsyncSession = Depe
         if not res.scalar_one_or_none():
             raise HTTPException(status_code=404, detail="Blocking task not found")
 
-    await asyncio.sleep(2)  # Simulated delay
+    await asyncio.sleep(5)  # Simulated delay
 
     task.title = payload.title
     task.description = payload.description
